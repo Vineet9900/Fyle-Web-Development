@@ -1,0 +1,53 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>GitHub Repositories</title>
+</head>
+<body>
+    <header>
+        <h1>GitHub Repositories</h1>
+    </header>
+
+    <div class="profile-section">
+        <div class="profile-image">
+            <!-- Add your profile image source here -->
+            <img src="assets/profile-pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-details">
+            <div class="username">c9s</div>
+            <div class="bio">a developer who really loves crafting tools</div>
+            <div class="location">Taipei, Taiwan</div>
+            <a style="width: fit-content;" href="https://github.com/c9s" target="_blank" style="color: blue; text-decoration: underline; display: block; margin-top: 10px;">Visit GitHub Profile</a>
+        </div>
+    </div>
+
+    <div class="search-bar" style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+        <input style="margin-left: 1rem;" type="text" id="searchInput" placeholder="Search repositories...">
+        <button onclick="searchRepositories()">Search</button>
+    </div>
+
+    <div id="repositoriesList"></div>
+
+    <div class="pagination">
+        <label for="perPage">Repositories per page:</label>
+        <select id="perPage" onchange="changePerPage()">
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+
+        <button onclick="previousPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+    </div>
+
+    <div id="loader" class="loader"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
